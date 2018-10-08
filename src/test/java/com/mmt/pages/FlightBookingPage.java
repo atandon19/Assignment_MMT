@@ -145,7 +145,6 @@ public class FlightBookingPage extends Keywords {
 	public boolean verifyListOfFlights() {
 
 		waitABit(2000);
-		System.out.println(list_of_flights.size());
 		if (list_of_flights.size() >= 2)
 			return true;
 
@@ -170,7 +169,6 @@ public class FlightBookingPage extends Keywords {
 	public void clickOnSourceTimeDuration() {
 		try {
 			for (WebElementFacade ele : time_duration_list) {
-				System.out.println(ele.getText());
 				if (ele.getText().contains("6AM-12PM") && ele.isEnabled()) {
 					ele.click();
 					break;
@@ -210,8 +208,6 @@ public class FlightBookingPage extends Keywords {
 		waitABit(1000);
 		String flightDetailFooter = flight_detail1__footer_left.getText();
 		String flightDetailReturnFooter = flight_detail1__footer_right.getText();
-		System.out.println(flightDetail);
-		System.out.println(flightDetailFooter);
 
 		if (flightDetail.contains(flightDetailFooter) && returnFightDetail.contains(flightDetailReturnFooter))
 			return true;
